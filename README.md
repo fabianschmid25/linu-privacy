@@ -1,1 +1,1 @@
-# little-linu-privacy
+# linu-privacy
