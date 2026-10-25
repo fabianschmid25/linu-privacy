@@ -5,10 +5,11 @@ and multilingual legal-document drafts for linu (EN / DE / ES).
 
 ## Operator fields (`js/site.js`)
 
-Closed-test operator block is filled for **Fabian Schmid** (natural person).
-Register/VAT are stated as not applicable in the imprint until Gewerbe.
-After registration, update name/address/register/VAT and redeploy
-(see `PLAN.md` → Datenschutz / Store). Have counsel review before open launch.
+Operator block: **LinuLab – Fabian Schmid** (Kleingewerbe), same Augsburg address,
+`linuteam@yahoo.com`. Imprint lists **USt-IdNr. DE465871191**; commercial register
+not applicable. Do **not** publish Steuernummer or W-IdNr. Unterscheidungsmerkmal.
+After edits, redeploy Pages (see `PLAN.md` → Datenschutz / Store). Have counsel
+review before open launch.
 
 The drafts already cover:
 

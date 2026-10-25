@@ -1,6 +1,6 @@
-/* Static legal site content. Operator currently listed as natural person. */
+/* Static legal site content. Kleingewerbe LinuLab (Inhaber Fabian Schmid). */
 const OPERATOR = {
-  legalName: "Fabian Schmid",
+  legalName: "LinuLab – Fabian Schmid",
   street: "Schroffenstraße 8a",
   postal: "86163",
   city: "Augsburg",
@@ -8,12 +8,14 @@ const OPERATOR = {
   contact: "linuteam@yahoo.com",
   privacy: "linuteam@yahoo.com",
   support: "linuteam@yahoo.com",
-  lastUpdated: "29. September 2026",
+  lastUpdated: "25. Oktober 2026",
   supabaseRegion: "eu-central-1 (Frankfurt)",
-  /** Cloudflare R2: EU jurisdiction for playback video objects. */
+  /** Cloudflare R2: EU jurisdiction for media objects (videos, photos, thumbs, posters). */
   r2Note: "EU jurisdiction",
   /** Production builds may send technical crash data via Sentry. */
   errorMonitoring: "yes",
+  /** Public imprint only — do not publish Steuernummer / W-IdNr. Unterscheidungsmerkmal. */
+  vatId: "DE465871191",
 };
 
 const contact = () => `<a href="mailto:${OPERATOR.contact}">${OPERATOR.contact}</a>`;
@@ -106,7 +108,7 @@ const text = {
         <ul>
           <li><strong>Account data</strong> — email address, display name, account avatar, authentication and security data (for example password hashes managed by our auth provider, reset codes, session data).</li>
           <li><strong>Linu profiles and memberships</strong> — profile names and avatars, roles (owner, admin, member, viewer), invite codes, and who belongs to which profile.</li>
-          <li><strong>Media and memories</strong> — photos, videos, audio memories, captions, timeline entries, story/blog content, and related metadata such as capture date, dimensions or technical file attributes when available. Playback video files may be stored with a dedicated object-storage processor in the European Union (see processors below); posters, photos and related derivates remain with our primary backend storage.</li>
+          <li><strong>Media and memories</strong> — photos, videos, audio memories, captions, timeline entries, story/blog content, and related metadata such as capture date, dimensions or technical file attributes when available. New playback videos, display images, thumbs and video posters may be stored with a dedicated object-storage processor in the European Union (see processors below); older files, avatars and related derivates remain with our primary backend storage.</li>
           <li><strong>Interactions</strong> — likes, comments, activity events and push-notification tokens or preferences.</li>
           <li><strong>Technical and security data</strong> — device/app diagnostics needed to operate and secure the service, including error reports if monitoring is enabled.</li>
           <li><strong>Storage and plan data</strong> — approximate storage use, plan status (for example free or Linu Plus) and related quota information. Card or store payment details are processed by Apple, Google or other payment providers — not stored by linu as full payment credentials.</li>
@@ -130,7 +132,7 @@ const text = {
         <p>Content is shared only with members you (or other authorised roles) invite into the relevant Linu profile. We use processors needed to run linu, including:</p>
         <ul>
           <li>Supabase for database, authentication and media storage (including photos, posters and related objects)${supabaseNote};</li>
-          <li>Cloudflare R2 for playback video object storage${r2Note};</li>
+          <li>Cloudflare R2 for object storage of videos, photos, thumbs and posters${r2Note};</li>
           <li>email/infrastructure providers configured for transactional mail (for example password-reset codes);</li>
           <li>app stores and their billing systems when you purchase Linu Plus;</li>
           <li>hosting for this public website.${errorMonitoringSentence("en")}</li>
@@ -149,7 +151,7 @@ const text = {
         <p>Existing memories are not deleted solely because you reach a storage limit or leave a paid plan; new uploads may be refused until space is available again.</p>`,
       transfers: "International transfers",
       transfersBody:
-        "Some providers may process data outside your country or the European Economic Area. Where required, the operator uses an adequacy decision, EU standard contractual clauses, or another lawful transfer mechanism. Core hosting for linu data is planned in the EU (Supabase eu-central-1, Frankfurt; Cloudflare R2 with EU jurisdiction for playback videos); individual subprocessors may still involve limited transfers under those safeguards.",
+        "Some providers may process data outside your country or the European Economic Area. Where required, the operator uses an adequacy decision, EU standard contractual clauses, or another lawful transfer mechanism. Core hosting for linu data is planned in the EU (Supabase eu-central-1, Frankfurt; Cloudflare R2 with EU jurisdiction for videos, photos, thumbs and posters); individual subprocessors may still involve limited transfers under those safeguards.",
       rights: "Your rights",
       rightsBody: `Subject to legal limits, you may request access, correction, deletion, restriction, portability, or object to processing based on legitimate interests. Where processing relies on consent, you may withdraw it without affecting prior lawful processing. Contact ${privacyMail()} or ${supportMail()} for access or export requests. You may also complain to your local data-protection authority.`,
       security: "Security",
@@ -172,7 +174,7 @@ const text = {
         "You must be at least <strong>16 years old</strong> and provide accurate registration information. Keep your password confidential and tell us if you suspect unauthorised access. You are responsible for activity under your account, including invites you send and roles you assign.",
       service: "The service",
       serviceBody:
-        "linu provides private spaces (Linu profiles) for storing and sharing photos, videos, audio memories and timeline entries with authorised members. Technical storage may use specialised processors (for example database/auth/media backends and object storage for playback videos) under contracts and only to run the service. There is no public social feed and no advertising based on your family media. Features, limits and availability may change as the product develops. linu is not a professional archive, emergency service or guaranteed backup product — keep independent copies of content that matters to you.",
+        "linu provides private spaces (Linu profiles) for storing and sharing photos, videos, audio memories and timeline entries with authorised members. Technical storage may use specialised processors (for example database/auth/media backends and object storage for videos, photos, thumbs and posters) under contracts and only to run the service. There is no public social feed and no advertising based on your family media. Features, limits and availability may change as the product develops. linu is not a professional archive, emergency service or guaranteed backup product — keep independent copies of content that matters to you.",
       content: "Your content and licence",
       contentBody: `
         <p>You retain ownership of content you upload. To operate the service you grant ${OPERATOR.legalName} a limited, worldwide, non-exclusive licence to host, store, process, create technical derivatives (for example thumbnails or display versions), back up, transmit and display that content solely to provide linu to you and to people you authorise. This licence ends when the content is deleted from linu, subject to residual backups and legal duties.</p>
@@ -217,7 +219,7 @@ const text = {
       contactBody: `Email: ${contact()}<br>Privacy: ${privacyMail()}<br>Support: ${supportMail()}`,
       register: "Registration and tax details",
       registerBody:
-        "Commercial register: not applicable (natural person).<br>VAT ID: not applicable.",
+        `Commercial register: not applicable (sole trader / small business, no commercial-register entry).<br>VAT ID (USt-IdNr.): ${OPERATOR.vatId}.`,
       responsibility: "Editorial responsibility",
       responsibilityBody: `Responsible for content: ${address()}.`,
       website: "Website storage",
@@ -288,7 +290,7 @@ const text = {
         <ul>
           <li><strong>Kontodaten</strong> — E-Mail-Adresse, Anzeigename, Profilbild, Authentifizierungs- und Sicherheitsdaten (z. B. vom Auth-Anbieter verwaltete Passwort-Hashes, Reset-Codes, Sitzungsdaten).</li>
           <li><strong>Linu-Profile und Mitgliedschaften</strong> — Profilnamen und -bilder, Rollen (Owner, Admin, Member, Viewer), Einladungscodes und Zugehörigkeit zu Profilen.</li>
-          <li><strong>Medien und Erinnerungen</strong> — Fotos, Videos, Audio-Erinnerungen, Texte, Timeline-Einträge, Blog-/Story-Inhalte sowie Metadaten wie Aufnahmedatum, Abmessungen oder technische Dateiattribute, soweit vorhanden. Wiedergabe-Videodateien können bei einem eigenen Object-Storage-Auftragsverarbeiter in der Europäischen Union liegen (siehe Empfänger unten); Poster, Fotos und zugehörige Derivate verbleiben beim primären Backend-Speicher.</li>
+          <li><strong>Medien und Erinnerungen</strong> — Fotos, Videos, Audio-Erinnerungen, Texte, Timeline-Einträge, Blog-/Story-Inhalte sowie Metadaten wie Aufnahmedatum, Abmessungen oder technische Dateiattribute, soweit vorhanden. Neue Wiedergabe-Videos, Anzeigebilder, Thumbs und Video-Poster können bei einem eigenen Object-Storage-Auftragsverarbeiter in der Europäischen Union liegen (siehe Empfänger unten); ältere Dateien, Avatare und zugehörige Derivate verbleiben beim primären Backend-Speicher.</li>
           <li><strong>Interaktionen</strong> — Likes, Kommentare, Aktivitätsereignisse sowie Push-Token bzw. Benachrichtigungseinstellungen.</li>
           <li><strong>Technische und Sicherheitsdaten</strong> — Diagnosedaten zum Betrieb und zur Absicherung des Dienstes, einschließlich Fehlerberichten, falls Monitoring aktiv ist.</li>
           <li><strong>Speicher- und Plandaten</strong> — ungefährer Speicherverbrauch, Planstatus (z. B. Free oder Linu Plus) und Quota-Informationen. Zahlungsdaten der Karte bzw. des Stores verarbeiten Apple, Google oder andere Zahlungsanbieter — linu speichert keine vollständigen Zahlungsdaten.</li>
@@ -312,7 +314,7 @@ const text = {
         <p>Inhalte werden nur mit Mitgliedern geteilt, die du (oder andere berechtigte Rollen) in das jeweilige Linu-Profil einlädst. Für den Betrieb nutzen wir Auftragsverarbeiter, insbesondere:</p>
         <ul>
           <li>Supabase für Datenbank, Authentifizierung und Medienspeicher (u. a. Fotos, Poster und zugehörige Objekte)${supabaseNote};</li>
-          <li>Cloudflare R2 für den Object-Storage von Wiedergabe-Videos${r2Note};</li>
+          <li>Cloudflare R2 für den Object-Storage von Videos, Fotos, Thumbs und Postern${r2Note};</li>
           <li>E-Mail-/Infrastrukturdienste für Transaktionsmails (z. B. Passwort-Reset-Codes);</li>
           <li>App Stores und deren Abrechnungssysteme beim Kauf von Linu Plus;</li>
           <li>Hosting für diese öffentliche Website.${errorMonitoringSentence("de")}</li>
@@ -331,7 +333,7 @@ const text = {
         <p>Bestehende Erinnerungen werden nicht allein deshalb gelöscht, weil ein Speicherlimit erreicht ist oder ein bezahlter Plan endet; neue Uploads können abgelehnt werden, bis wieder Speicher frei ist.</p>`,
       transfers: "Drittlandübermittlung",
       transfersBody:
-        "Dienstleister können Daten außerhalb deines Landes oder des EWR verarbeiten. Soweit erforderlich, nutzen wir Angemessenheitsbeschlüsse, EU-Standardvertragsklauseln oder andere zulässige Garantien. Die zentrale Datenhaltung von linu ist in der EU vorgesehen (Supabase eu-central-1, Frankfurt; Cloudflare R2 mit EU-Jurisdiction für Wiedergabe-Videos); einzelne Unterauftragsverarbeiter können unter diesen Garantien dennoch begrenzte Übermittlungen beinhalten.",
+        "Dienstleister können Daten außerhalb deines Landes oder des EWR verarbeiten. Soweit erforderlich, nutzen wir Angemessenheitsbeschlüsse, EU-Standardvertragsklauseln oder andere zulässige Garantien. Die zentrale Datenhaltung von linu ist in der EU vorgesehen (Supabase eu-central-1, Frankfurt; Cloudflare R2 mit EU-Jurisdiction für Videos, Fotos, Thumbs und Poster); einzelne Unterauftragsverarbeiter können unter diesen Garantien dennoch begrenzte Übermittlungen beinhalten.",
       rights: "Deine Rechte",
       rightsBody: `Im gesetzlichen Umfang hast du Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch gegen Verarbeitungen auf Basis berechtigter Interessen. Einwilligungen kannst du widerrufen, ohne die Rechtmäßigkeit der vorherigen Verarbeitung zu berühren. Kontakt: ${privacyMail()} oder ${supportMail()} für Auskunfts- bzw. Exportanfragen. Außerdem besteht ein Beschwerderecht bei der Datenschutzaufsicht.`,
       security: "Sicherheit",
@@ -354,7 +356,7 @@ const text = {
         "Du musst mindestens <strong>16 Jahre</strong> alt sein und richtige Registrierungsangaben machen. Schütze dein Passwort und melde vermuteten unbefugten Zugriff. Du bist für Aktivitäten über dein Konto verantwortlich, einschließlich versendeter Einladungen und vergebener Rollen.",
       service: "Der Dienst",
       serviceBody:
-        "linu bietet private Räume (Linu-Profile) zum Speichern und Teilen von Fotos, Videos, Audio-Erinnerungen und Timeline-Einträgen mit berechtigten Mitgliedern. Die technische Speicherung kann spezialisierte Auftragsverarbeiter nutzen (z. B. Datenbank-/Auth-/Medien-Backends und Object-Storage für Wiedergabe-Videos) — vertraglich gebunden und nur zum Betrieb des Dienstes. Es gibt keinen öffentlichen Social-Feed und keine Werbung auf Basis deiner Familienmedien. Funktionen, Limits und Verfügbarkeit können sich weiterentwickeln. linu ist kein professionelles Archiv, kein Notfalldienst und keine garantierte Backup-Lösung — sichere wichtige Inhalte zusätzlich selbst.",
+        "linu bietet private Räume (Linu-Profile) zum Speichern und Teilen von Fotos, Videos, Audio-Erinnerungen und Timeline-Einträgen mit berechtigten Mitgliedern. Die technische Speicherung kann spezialisierte Auftragsverarbeiter nutzen (z. B. Datenbank-/Auth-/Medien-Backends und Object-Storage für Videos, Fotos, Thumbs und Poster) — vertraglich gebunden und nur zum Betrieb des Dienstes. Es gibt keinen öffentlichen Social-Feed und keine Werbung auf Basis deiner Familienmedien. Funktionen, Limits und Verfügbarkeit können sich weiterentwickeln. linu ist kein professionelles Archiv, kein Notfalldienst und keine garantierte Backup-Lösung — sichere wichtige Inhalte zusätzlich selbst.",
       content: "Deine Inhalte und Lizenz",
       contentBody: `
         <p>Du behältst die Rechte an hochgeladenen Inhalten. Für den Betrieb räumst du ${OPERATOR.legalName} eine beschränkte, weltweite, nicht ausschließliche Lizenz ein, Inhalte ausschließlich zur Bereitstellung von linu für dich und von dir berechtigte Personen zu hosten, zu speichern, zu verarbeiten, technisch abzuleiten (z. B. Vorschaubilder), zu sichern, zu übertragen und anzuzeigen. Die Lizenz endet mit Löschung der Inhalte in linu, vorbehaltlich Rest-Backups und gesetzlicher Pflichten.</p>
@@ -399,7 +401,7 @@ const text = {
       contactBody: `E-Mail: ${contact()}<br>Datenschutz: ${privacyMail()}<br>Support: ${supportMail()}`,
       register: "Register- und Steuerangaben",
       registerBody:
-        "Handelsregister: nicht zutreffend (natürliche Person).<br>USt-IdNr.: nicht zutreffend.",
+        `Handelsregister: nicht zutreffend (Einzelunternehmen / Kleingewerbe, kein Handelsregistereintrag).<br>USt-IdNr.: ${OPERATOR.vatId}.`,
       responsibility: "Verantwortlich für Inhalte",
       responsibilityBody: `Verantwortlich: ${address()}.`,
       website: "Speicherung auf der Website",
@@ -470,7 +472,7 @@ const text = {
         <ul>
           <li><strong>Datos de cuenta</strong> — correo, nombre visible, avatar, autenticación y seguridad (p. ej. hashes de contraseña gestionados por el proveedor de auth, códigos de restablecimiento, sesión).</li>
           <li><strong>Perfiles Linu y membresías</strong> — nombres y avatares de perfil, roles (owner, admin, member, viewer), códigos de invitación y pertenencia a perfiles.</li>
-          <li><strong>Medios y recuerdos</strong> — fotos, vídeos, audios, textos, entradas de la línea de tiempo, contenido tipo blog/story y metadatos como fecha de captura, dimensiones o atributos técnicos cuando existan. Los archivos de vídeo de reproducción pueden almacenarse con un encargado específico de object storage en la Unión Europea (véase destinatarios más abajo); pósteres, fotos y derivados relacionados permanecen en el almacenamiento principal del backend.</li>
+          <li><strong>Medios y recuerdos</strong> — fotos, vídeos, audios, textos, entradas de la línea de tiempo, contenido tipo blog/story y metadatos como fecha de captura, dimensiones o atributos técnicos cuando existan. Los vídeos de reproducción nuevos, las imágenes de visualización, miniaturas y pósteres de vídeo pueden almacenarse con un encargado específico de object storage en la Unión Europea (véase destinatarios más abajo); archivos antiguos, avatares y derivados relacionados permanecen en el almacenamiento principal del backend.</li>
           <li><strong>Interacciones</strong> — Me gusta, comentarios, eventos de actividad y tokens o preferencias de notificaciones push.</li>
           <li><strong>Datos técnicos y de seguridad</strong> — diagnósticos necesarios para operar y proteger el servicio, incluidos informes de error si hay monitorización.</li>
           <li><strong>Almacenamiento y plan</strong> — uso aproximado de almacenamiento, estado del plan (p. ej. gratis o Linu Plus) e información de cuota. Los datos de pago los tratan Apple, Google u otros proveedores — linu no guarda credenciales de pago completas.</li>
@@ -494,7 +496,7 @@ const text = {
         <p>El contenido solo se comparte con miembros invitados al perfil Linu correspondiente. Usamos encargados del tratamiento necesarios para operar linu, entre ellos:</p>
         <ul>
           <li>Supabase para base de datos, autenticación y almacenamiento de medios (incl. fotos, pósteres y objetos relacionados)${supabaseNote};</li>
-          <li>Cloudflare R2 para el almacenamiento de objetos de vídeo de reproducción${r2Note};</li>
+          <li>Cloudflare R2 para el almacenamiento de objetos de vídeos, fotos, miniaturas y pósteres${r2Note};</li>
           <li>proveedores de correo/infraestructura para mensajes transaccionales (p. ej. códigos de restablecimiento);</li>
           <li>tiendas de aplicaciones y sus sistemas de facturación al comprar Linu Plus;</li>
           <li>alojamiento de este sitio público.${errorMonitoringSentence("es")}</li>
@@ -513,7 +515,7 @@ const text = {
         <p>Los recuerdos existentes no se borran solo por alcanzar un límite de almacenamiento o dejar un plan de pago; las nuevas cargas pueden rechazarse hasta que haya espacio.</p>`,
       transfers: "Transferencias internacionales",
       transfersBody:
-        "Algunos proveedores pueden tratar datos fuera de tu país o del EEE. Cuando sea necesario, usamos una decisión de adecuación, cláusulas contractuales tipo de la UE u otra garantía válida. El alojamiento principal de datos de linu está previsto en la UE (Supabase eu-central-1, Frankfurt; Cloudflare R2 con jurisdicción UE para vídeos de reproducción); algunos subencargados pueden implicar transferencias limitadas bajo esas garantías.",
+        "Algunos proveedores pueden tratar datos fuera de tu país o del EEE. Cuando sea necesario, usamos una decisión de adecuación, cláusulas contractuales tipo de la UE u otra garantía válida. El alojamiento principal de datos de linu está previsto en la UE (Supabase eu-central-1, Frankfurt; Cloudflare R2 con jurisdicción UE para vídeos, fotos, miniaturas y pósteres); algunos subencargados pueden implicar transferencias limitadas bajo esas garantías.",
       rights: "Tus derechos",
       rightsBody: `Dentro de los límites legales puedes solicitar acceso, rectificación, borrado, limitación, portabilidad u oponerte a tratamientos basados en interés legítimo. Puedes retirar el consentimiento sin afectar la licitud del tratamiento anterior. Contacto: ${privacyMail()} o ${supportMail()} para solicitudes de acceso o exportación. También puedes reclamar ante la autoridad de protección de datos.`,
       security: "Seguridad",
@@ -536,7 +538,7 @@ const text = {
         "Debes tener al menos <strong>16 años</strong> y facilitar datos de registro exactos. Protege tu contraseña e informa si sospechas un acceso no autorizado. Eres responsable de la actividad de tu cuenta, incluidas las invitaciones que envías y los roles que asignas.",
       service: "El servicio",
       serviceBody:
-        "linu ofrece espacios privados (perfiles Linu) para guardar y compartir fotos, vídeos, audios y entradas de la línea de tiempo con miembros autorizados. El almacenamiento técnico puede usar encargados especializados (p. ej. backends de base de datos/auth/medios y object storage para vídeos de reproducción) bajo contrato y solo para operar el servicio. No hay feed social público ni publicidad basada en tus medios familiares. Las funciones, límites y disponibilidad pueden evolucionar. linu no es un archivo profesional, un servicio de emergencias ni una copia de seguridad garantizada: conserva copias independientes de lo importante.",
+        "linu ofrece espacios privados (perfiles Linu) para guardar y compartir fotos, vídeos, audios y entradas de la línea de tiempo con miembros autorizados. El almacenamiento técnico puede usar encargados especializados (p. ej. backends de base de datos/auth/medios y object storage para vídeos, fotos, miniaturas y pósteres) bajo contrato y solo para operar el servicio. No hay feed social público ni publicidad basada en tus medios familiares. Las funciones, límites y disponibilidad pueden evolucionar. linu no es un archivo profesional, un servicio de emergencias ni una copia de seguridad garantizada: conserva copias independientes de lo importante.",
       content: "Tu contenido y licencia",
       contentBody: `
         <p>Conservas la titularidad de lo que subes. Para operar el servicio concedes a ${OPERATOR.legalName} una licencia limitada, mundial y no exclusiva para alojar, almacenar, tratar, crear derivados técnicos (p. ej. miniaturas), respaldar, transmitir y mostrar ese contenido solo para prestarte linu a ti y a las personas que autorices. La licencia termina al borrar el contenido en linu, sin perjuicio de copias residuales y obligaciones legales.</p>
@@ -581,7 +583,7 @@ const text = {
       contactBody: `Correo: ${contact()}<br>Privacidad: ${privacyMail()}<br>Soporte: ${supportMail()}`,
       register: "Registro e impuestos",
       registerBody:
-        "Registro mercantil: no aplicable (persona física).<br>NIF/IVA: no aplicable.",
+        `Registro mercantil: no aplicable (autónomo / pequeño negocio, sin inscripción mercantil).<br>NIF-IVA (USt-IdNr.): ${OPERATOR.vatId}.`,
       responsibility: "Responsable editorial",
       responsibilityBody: `Responsable: ${address()}.`,
       website: "Almacenamiento en el sitio",
