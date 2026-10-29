@@ -8,7 +8,7 @@ const OPERATOR = {
   contact: "linuteam@yahoo.com",
   privacy: "linuteam@yahoo.com",
   support: "linuteam@yahoo.com",
-  lastUpdated: "25. Oktober 2026",
+  lastUpdated: "29. Oktober 2026",
   supabaseRegion: "eu-central-1 (Frankfurt)",
   /** Cloudflare R2: EU jurisdiction for media objects (videos, photos, thumbs, posters). */
   r2Note: "EU jurisdiction",
@@ -108,7 +108,7 @@ const text = {
         <ul>
           <li><strong>Account data</strong> — email address, display name, account avatar, authentication and security data (for example password hashes managed by our auth provider, reset codes, session data).</li>
           <li><strong>Linu profiles and memberships</strong> — profile names and avatars, roles (owner, admin, member, viewer), invite codes, and who belongs to which profile.</li>
-          <li><strong>Media and memories</strong> — photos, videos, audio memories, captions, timeline entries, story/blog content, and related metadata such as capture date, dimensions or technical file attributes when available. New playback videos, display images, thumbs and video posters may be stored with a dedicated object-storage processor in the European Union (see processors below); older files, avatars and related derivates remain with our primary backend storage.</li>
+          <li><strong>Media and memories</strong> — photos, videos, audio memories, captions, timeline entries, story/blog content, and related metadata such as capture date, dimensions or technical file attributes when available. Playback videos, display images, thumbs and video posters are stored with a dedicated object-storage processor in the European Union (see processors below); older files, avatars and related derivates remain with our primary backend storage.</li>
           <li><strong>Interactions</strong> — likes, comments, activity events and push-notification tokens or preferences.</li>
           <li><strong>Technical and security data</strong> — device/app diagnostics needed to operate and secure the service, including error reports if monitoring is enabled.</li>
           <li><strong>Storage and plan data</strong> — approximate storage use, plan status (for example free or Linu Plus) and related quota information. Card or store payment details are processed by Apple, Google or other payment providers — not stored by linu as full payment credentials.</li>
@@ -151,7 +151,7 @@ const text = {
         <p>Existing memories are not deleted solely because you reach a storage limit or leave a paid plan; new uploads may be refused until space is available again.</p>`,
       transfers: "International transfers",
       transfersBody:
-        "Some providers may process data outside your country or the European Economic Area. Where required, the operator uses an adequacy decision, EU standard contractual clauses, or another lawful transfer mechanism. Core hosting for linu data is planned in the EU (Supabase eu-central-1, Frankfurt; Cloudflare R2 with EU jurisdiction for videos, photos, thumbs and posters); individual subprocessors may still involve limited transfers under those safeguards.",
+        "Some providers may process data outside your country or the European Economic Area. Where required, the operator uses an adequacy decision, EU standard contractual clauses, or another lawful transfer mechanism. Core hosting for linu data is in the EU (Supabase eu-central-1, Frankfurt; Cloudflare R2 with EU jurisdiction for videos, photos, thumbs and posters); individual subprocessors may still involve limited transfers under those safeguards.",
       rights: "Your rights",
       rightsBody: `Subject to legal limits, you may request access, correction, deletion, restriction, portability, or object to processing based on legitimate interests. Where processing relies on consent, you may withdraw it without affecting prior lawful processing. Contact ${privacyMail()} or ${supportMail()} for access or export requests. You may also complain to your local data-protection authority.`,
       security: "Security",
@@ -290,7 +290,7 @@ const text = {
         <ul>
           <li><strong>Kontodaten</strong> — E-Mail-Adresse, Anzeigename, Profilbild, Authentifizierungs- und Sicherheitsdaten (z. B. vom Auth-Anbieter verwaltete Passwort-Hashes, Reset-Codes, Sitzungsdaten).</li>
           <li><strong>Linu-Profile und Mitgliedschaften</strong> — Profilnamen und -bilder, Rollen (Owner, Admin, Member, Viewer), Einladungscodes und Zugehörigkeit zu Profilen.</li>
-          <li><strong>Medien und Erinnerungen</strong> — Fotos, Videos, Audio-Erinnerungen, Texte, Timeline-Einträge, Blog-/Story-Inhalte sowie Metadaten wie Aufnahmedatum, Abmessungen oder technische Dateiattribute, soweit vorhanden. Neue Wiedergabe-Videos, Anzeigebilder, Thumbs und Video-Poster können bei einem eigenen Object-Storage-Auftragsverarbeiter in der Europäischen Union liegen (siehe Empfänger unten); ältere Dateien, Avatare und zugehörige Derivate verbleiben beim primären Backend-Speicher.</li>
+          <li><strong>Medien und Erinnerungen</strong> — Fotos, Videos, Audio-Erinnerungen, Texte, Timeline-Einträge, Blog-/Story-Inhalte sowie Metadaten wie Aufnahmedatum, Abmessungen oder technische Dateiattribute, soweit vorhanden. Wiedergabe-Videos, Anzeigebilder, Thumbs und Video-Poster liegen bei einem eigenen Object-Storage-Auftragsverarbeiter in der Europäischen Union (siehe Empfänger unten); ältere Dateien, Avatare und zugehörige Derivate verbleiben beim primären Backend-Speicher.</li>
           <li><strong>Interaktionen</strong> — Likes, Kommentare, Aktivitätsereignisse sowie Push-Token bzw. Benachrichtigungseinstellungen.</li>
           <li><strong>Technische und Sicherheitsdaten</strong> — Diagnosedaten zum Betrieb und zur Absicherung des Dienstes, einschließlich Fehlerberichten, falls Monitoring aktiv ist.</li>
           <li><strong>Speicher- und Plandaten</strong> — ungefährer Speicherverbrauch, Planstatus (z. B. Free oder Linu Plus) und Quota-Informationen. Zahlungsdaten der Karte bzw. des Stores verarbeiten Apple, Google oder andere Zahlungsanbieter — linu speichert keine vollständigen Zahlungsdaten.</li>
@@ -333,7 +333,7 @@ const text = {
         <p>Bestehende Erinnerungen werden nicht allein deshalb gelöscht, weil ein Speicherlimit erreicht ist oder ein bezahlter Plan endet; neue Uploads können abgelehnt werden, bis wieder Speicher frei ist.</p>`,
       transfers: "Drittlandübermittlung",
       transfersBody:
-        "Dienstleister können Daten außerhalb deines Landes oder des EWR verarbeiten. Soweit erforderlich, nutzen wir Angemessenheitsbeschlüsse, EU-Standardvertragsklauseln oder andere zulässige Garantien. Die zentrale Datenhaltung von linu ist in der EU vorgesehen (Supabase eu-central-1, Frankfurt; Cloudflare R2 mit EU-Jurisdiction für Videos, Fotos, Thumbs und Poster); einzelne Unterauftragsverarbeiter können unter diesen Garantien dennoch begrenzte Übermittlungen beinhalten.",
+        "Dienstleister können Daten außerhalb deines Landes oder des EWR verarbeiten. Soweit erforderlich, nutzen wir Angemessenheitsbeschlüsse, EU-Standardvertragsklauseln oder andere zulässige Garantien. Die zentrale Datenhaltung von linu liegt in der EU (Supabase eu-central-1, Frankfurt; Cloudflare R2 mit EU-Jurisdiction für Videos, Fotos, Thumbs und Poster); einzelne Unterauftragsverarbeiter können unter diesen Garantien dennoch begrenzte Übermittlungen beinhalten.",
       rights: "Deine Rechte",
       rightsBody: `Im gesetzlichen Umfang hast du Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch gegen Verarbeitungen auf Basis berechtigter Interessen. Einwilligungen kannst du widerrufen, ohne die Rechtmäßigkeit der vorherigen Verarbeitung zu berühren. Kontakt: ${privacyMail()} oder ${supportMail()} für Auskunfts- bzw. Exportanfragen. Außerdem besteht ein Beschwerderecht bei der Datenschutzaufsicht.`,
       security: "Sicherheit",
@@ -472,7 +472,7 @@ const text = {
         <ul>
           <li><strong>Datos de cuenta</strong> — correo, nombre visible, avatar, autenticación y seguridad (p. ej. hashes de contraseña gestionados por el proveedor de auth, códigos de restablecimiento, sesión).</li>
           <li><strong>Perfiles Linu y membresías</strong> — nombres y avatares de perfil, roles (owner, admin, member, viewer), códigos de invitación y pertenencia a perfiles.</li>
-          <li><strong>Medios y recuerdos</strong> — fotos, vídeos, audios, textos, entradas de la línea de tiempo, contenido tipo blog/story y metadatos como fecha de captura, dimensiones o atributos técnicos cuando existan. Los vídeos de reproducción nuevos, las imágenes de visualización, miniaturas y pósteres de vídeo pueden almacenarse con un encargado específico de object storage en la Unión Europea (véase destinatarios más abajo); archivos antiguos, avatares y derivados relacionados permanecen en el almacenamiento principal del backend.</li>
+          <li><strong>Medios y recuerdos</strong> — fotos, vídeos, audios, textos, entradas de la línea de tiempo, contenido tipo blog/story y metadatos como fecha de captura, dimensiones o atributos técnicos cuando existan. Los vídeos de reproducción, las imágenes de visualización, miniaturas y pósteres de vídeo se almacenan con un encargado específico de object storage en la Unión Europea (véase destinatarios más abajo); archivos antiguos, avatares y derivados relacionados permanecen en el almacenamiento principal del backend.</li>
           <li><strong>Interacciones</strong> — Me gusta, comentarios, eventos de actividad y tokens o preferencias de notificaciones push.</li>
           <li><strong>Datos técnicos y de seguridad</strong> — diagnósticos necesarios para operar y proteger el servicio, incluidos informes de error si hay monitorización.</li>
           <li><strong>Almacenamiento y plan</strong> — uso aproximado de almacenamiento, estado del plan (p. ej. gratis o Linu Plus) e información de cuota. Los datos de pago los tratan Apple, Google u otros proveedores — linu no guarda credenciales de pago completas.</li>
@@ -515,7 +515,7 @@ const text = {
         <p>Los recuerdos existentes no se borran solo por alcanzar un límite de almacenamiento o dejar un plan de pago; las nuevas cargas pueden rechazarse hasta que haya espacio.</p>`,
       transfers: "Transferencias internacionales",
       transfersBody:
-        "Algunos proveedores pueden tratar datos fuera de tu país o del EEE. Cuando sea necesario, usamos una decisión de adecuación, cláusulas contractuales tipo de la UE u otra garantía válida. El alojamiento principal de datos de linu está previsto en la UE (Supabase eu-central-1, Frankfurt; Cloudflare R2 con jurisdicción UE para vídeos, fotos, miniaturas y pósteres); algunos subencargados pueden implicar transferencias limitadas bajo esas garantías.",
+        "Algunos proveedores pueden tratar datos fuera de tu país o del EEE. Cuando sea necesario, usamos una decisión de adecuación, cláusulas contractuales tipo de la UE u otra garantía válida. El alojamiento principal de datos de linu está en la UE (Supabase eu-central-1, Frankfurt; Cloudflare R2 con jurisdicción UE para vídeos, fotos, miniaturas y pósteres); algunos subencargados pueden implicar transferencias limitadas bajo esas garantías.",
       rights: "Tus derechos",
       rightsBody: `Dentro de los límites legales puedes solicitar acceso, rectificación, borrado, limitación, portabilidad u oponerte a tratamientos basados en interés legítimo. Puedes retirar el consentimiento sin afectar la licitud del tratamiento anterior. Contacto: ${privacyMail()} o ${supportMail()} para solicitudes de acceso o exportación. También puedes reclamar ante la autoridad de protección de datos.`,
       security: "Seguridad",

@@ -1,33 +1,25 @@
 # linu public website and legal documents
 
-This folder is a static GitHub Pages site. It contains the public landing page
-and multilingual legal-document drafts for linu (EN / DE / ES).
+Static GitHub Pages site: public landing page and multilingual legal documents
+for linu (EN / DE / ES). **Go-live texts** (self-maintained; stand in
+`js/site.js` → `OPERATOR.lastUpdated`).
 
 ## Operator fields (`js/site.js`)
 
-Operator block: **LinuLab – Fabian Schmid** (Kleingewerbe), same Augsburg address,
+Operator block: **LinuLab – Fabian Schmid** (Kleingewerbe), Augsburg address,
 `linuteam@yahoo.com`. Imprint lists **USt-IdNr. DE465871191**; commercial register
 not applicable. Do **not** publish Steuernummer or W-IdNr. Unterscheidungsmerkmal.
-After edits, redeploy Pages (see `PLAN.md` → Datenschutz / Store). Have counsel
-review before open launch.
+After edits, redeploy Pages (copy into `C:\website` / `fabianschmid25/linu-privacy`
+and push `main`).
 
-The drafts already cover:
+The published texts cover:
 
 - GDPR-oriented privacy categories, purposes, children (16+), deletion rules
 - No advertising / no sale of family media
 - Terms: content licence, invites, acceptable use, Linu Plus / store billing
-- Website local-storage note (language preference; no ad cookies yet)
+- Website local-storage note (language preference; no ad cookies)
 
-## GitHub Pages deployment
-
-1. Create a separate **public** GitHub repository, for example `linu-site`.
-2. Copy the contents of this `website/` directory into the repository root.
-3. Commit and push to the repository's `main` branch.
-4. In GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**.
-5. Select `main` and `/ (root)`, then save.
-6. Wait for the Pages deployment and test all three language selectors.
-
-The live URLs for linu are:
+## Live URLs
 
 ```text
 https://littlelinu.com/index.html
@@ -42,8 +34,11 @@ Use the privacy URL in Google Play Console and App Store Connect. Use
 resource in Play Console Data safety. Keep the repository public so store
 reviewers can access the documents.
 
-## App-store follow-up
+App Settings already link Privacy / Terms / Imprint via `constants/legal.ts`.
+Complete Play Data safety / Age Rating from the production SDK configuration.
 
-After the final URL is known, wire these pages into the app's Settings screen
-and update the production checklist. Then complete the store Data safety /
-Privacy Nutrition Label forms from the actual production SDK configuration.
+## Redeploy
+
+1. Copy contents of this `website/` directory into the Pages repo root (`C:\website`).
+2. Commit and push `main`.
+3. Confirm Pages deploy and language selectors on the live URLs above.
